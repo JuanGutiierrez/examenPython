@@ -9,11 +9,6 @@ print("5. Salir")
 
 frutas = []
 while opcion != 5:
-    
-    # print("****** Prepare su salpicon ******")
-    # print("1. Defina las frutas con las que va a preparar su salpicon: ")
-    # print("0. Salir")
-    # opcion = int(input("Digita una opción: "))
     fruta={}
     opcion=int(input("Digita la opción deseada: "))
     if opcion == 1:
