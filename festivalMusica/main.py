@@ -29,16 +29,18 @@ while opcion != 5:
             print(f"Hora =  {agrupacionSeleccionada['hora']}")
             print(f"Pago =  {agrupacionSeleccionada['pago']}")
             print(f"Estado = {agrupacionSeleccionada['estado']}")
-    elif opcion == 3:
-        pass
-    elif opcion == 4: 
-        # buscar = int(input("Ingresa el código de la banda que desea eliminar: "))
-        # for eliminarBanda in agrupaciones:
-        #     if eliminarBanda['codigo'] == buscar:
-        #         agrupaciones.pop(agrupacion)
-        #         break
-            
-            # Retirando una agrupación que no se ha presentado del listado de agrupaciones
+    elif opcion == 3:  
+        
+        id_buscar = int(input("\nIngrese el ID de la agrupación cuya hora de presentación desea cambiar: "))
+        for agrupacion in agrupaciones:
+            if agrupacion["codigo"] == id_buscar and not agrupacion["estado"]:
+                nueva_hora = input("Ingrese la nueva hora de presentación: ")
+                agrupacion["hora"] = nueva_hora
+                print("Hora de presentación actualizada con éxito.")
+                break
+        else:
+            print("\nAgrupación no encontrada o ya se ha presentado.")
+    elif opcion == 4:
         id_retirar = int(input("\nIngrese el ID de la agrupación que desea retirar: "))
         for agrupacion in agrupaciones:
             if agrupacion["codigo"] == id_retirar and not agrupacion["estado"]:
